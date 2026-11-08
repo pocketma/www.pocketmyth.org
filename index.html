@@ -195,7 +195,10 @@
             <span class="brand-name">POCKET<br><b>MYTH</b></span>
         </a>
 
+        <button class="nav-toggle" type="button" aria-label="菜单" aria-expanded="false">☰</button>
         <nav class="main-nav" aria-label="Main navigation">
+        <div class="nav-langs"><span aria-current="page">EN</span><a href="https://zh.pocketmyth.org/">简体</a><a href="https://zhtw.pocketmyth.org/">繁體</a><a href="https://ko.pocketmyth.org/">한국어</a><a href="https://vi.pocketmyth.org/">Tiếng Việt</a></div>
+    
             <a href="#news">News</a>
             <a href="#showcase">Showcase</a>
             <a href="#starters">Starters</a>
@@ -424,7 +427,7 @@
 
                 <!-- news:start -->
                 <div class="news-grid">
-                    <a class="news-card" href="../news/early-winter-blooms-flower-event.html">
+                    <a class="news-card" href="news/early-winter-blooms-flower-event.html">
                         <span class="news-tag">Event</span>
                         <div class="news-body">
                             <h3 class="news-title">Early winter flowers bring a fresh exchange shop</h3>
@@ -432,7 +435,7 @@
                             <p class="news-date"><time datetime="2026-11-05">November 5, 2026</time></p>
                         </div>
                     </a>
-                    <a class="news-card" href="../news/season-12-preview-gengar-skin.html">
+                    <a class="news-card" href="news/season-12-preview-gengar-skin.html">
                         <span class="news-tag">Guide</span>
                         <div class="news-body">
                             <h3 class="news-title">Season 12 adds a Gengar skin and a talent tree</h3>
@@ -440,7 +443,7 @@
                             <p class="news-date"><time datetime="2026-11-08">Updated November 8, 2026</time></p>
                         </div>
                     </a>
-                    <a class="news-card" href="../news/maintenance-november-5-2026.html">
+                    <a class="news-card" href="news/maintenance-november-5-2026.html">
                         <span class="news-tag">Update</span>
                         <div class="news-body">
                             <h3 class="news-title">POCKET MYTH goes dark on November 5 for maintenance</h3>
@@ -448,7 +451,7 @@
                             <p class="news-date"><time datetime="2026-11-04">November 4, 2026</time></p>
                         </div>
                     </a>
-                    <a class="news-card" href="../news/halloween-carnival-event.html">
+                    <a class="news-card" href="news/halloween-carnival-event.html">
                         <span class="news-tag">Event</span>
                         <div class="news-body">
                             <h3 class="news-title">Halloween carnival: pumpkins, costumes and SP Gengar</h3>
@@ -456,7 +459,7 @@
                             <p class="news-date"><time datetime="2026-10-28">October 28, 2026</time></p>
                         </div>
                     </a>
-                    <a class="news-card" href="../news/maintenance-october-29-2026.html">
+                    <a class="news-card" href="news/maintenance-october-29-2026.html">
                         <span class="news-tag">Update</span>
                         <div class="news-body">
                             <h3 class="news-title">October 29 maintenance opens Season 12</h3>
@@ -464,7 +467,7 @@
                             <p class="news-date"><time datetime="2026-10-28">October 28, 2026</time></p>
                         </div>
                     </a>
-                    <a class="news-card" href="../news/fireworks-weekend-event.html">
+                    <a class="news-card" href="news/fireworks-weekend-event.html">
                         <span class="news-tag">Event</span>
                         <div class="news-body">
                             <h3 class="news-title">A fireworks weekend with a short reward track</h3>
@@ -923,6 +926,20 @@
 
             render();
             restart();
+        }());
+    </script>
+
+    <script>
+        (function () {
+            var header = document.querySelector('.site-header');
+            var nav = document.querySelector('.main-nav');
+            var btn = document.querySelector('.nav-toggle');
+            if (!header || !nav || !btn) { return; }
+            btn.addEventListener('click', function () {
+                var open = nav.classList.toggle('open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                btn.textContent = open ? '\u2715' : '\u2630';
+            });
         }());
     </script>
 </body>
